@@ -23,6 +23,6 @@ class Command(BaseCommand):
 
         try:
             User.objects.create_superuser(username='carl', email='carl@planetly.com', password= 'new_employee')
-        except OperationalError:
+        except Exception:
             pass
         print('successfully created usage types and a test user')
