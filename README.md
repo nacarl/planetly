@@ -5,15 +5,16 @@ do so. The biggest trouble I had doing this was the docker
 compose file, because the postgres server needs some time
 to get running.
 
-This project is my implemantation for a planetly coding challenge.
+This project is my implementation for a planetly coding challenge.
 It is implemented with django and the django-restframework.
-The proejct contains a docker-compose file to run the 
-web server and data base server (postgres here).
+The project contains a docker-compose file to run the 
+web server and database server (postgres here).
 This project is running the django development server which
 should not be used in a production environment, but it 
-serves the purpose of this task.
+serves the purpose of this task (this is also the reason why
+a restart of the docker-compose is necessary)
 
-###run the application with docker-compose:
+##run the application with docker-compose:
 `cd planetly`
 
 `docker-compose build`
@@ -23,7 +24,7 @@ serves the purpose of this task.
 wait until the db server is started and the other processes are done. 
 Then kill the processes with ctrl + c and rerun 
 `docker-compose up` (because the web server is not restarting correctly)
-####The API should be running on localhost:8000/
+##The API should be running on localhost:8000/
 The API contains the following endpoints:
 * /usages
 * /users
@@ -35,17 +36,17 @@ on `127.0.0.1:8000/api-token-auth/` with a tool like postman to
 get a token and use it with a browser extension like Chrome Modheader
 to add the token to your requests headers:
 `Authorization: Token <your_token>`
-###Filtering:
+##Filtering:
 A Date range filter can be applied for the usage: usage_at attribute like this:
 
 `/usages/?usage_at_start=2019-01-01&usage_at_end=2021-01-01`
 
-###Sorting:
+##Sorting:
 Sorting is possible for following attribute:
 * usage types: 'name', 'unit', 'factor'
 * usages: 'usage_type'
 
 e.g.: `/usages/?ordering=-usage_type`
 
-###Pagination
+##Pagination
 Pagination is enabled and set to a page size of 5 for demonstration purposes.
