@@ -16,6 +16,8 @@ serves the purpose of this task.
 ###run the application with docker-compose:
 `cd planetly`
 
+`docker-compose build`
+
 `docker-compose up`
 
 ####The API should be running on localhost:8000/

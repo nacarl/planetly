@@ -9,6 +9,7 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=aLkokdelfnvKKsasd33io
+    restart: always
   web:
     build: .
     image: django_planetly
