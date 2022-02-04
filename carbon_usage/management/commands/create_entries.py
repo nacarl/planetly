@@ -3,7 +3,7 @@ from decimal import Decimal
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand
 from carbon_usage.models import UsageType
-from django.db import IntegrityError
+from django.db import OperationalError
 
 
 class Command(BaseCommand):
@@ -23,6 +23,6 @@ class Command(BaseCommand):
 
         try:
             User.objects.create_superuser(username='carl', email='carl@planetly.com', password= 'new_employee')
-        except IntegrityError:
+        except OperationalError:
             pass
         print('successfully created usage types and a test user')

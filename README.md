@@ -20,6 +20,9 @@ serves the purpose of this task.
 
 `docker-compose up`
 
+wait until the db server is started and the other processes are done. 
+Then kill the processes with ctrl + c and rerun 
+`docker-compose up` (because the web server is not restarting correctly)
 ####The API should be running on localhost:8000/
 The API contains the following endpoints:
 * /usages

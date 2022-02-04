@@ -25,6 +25,7 @@ services:
     depends_on:
       - migration
       - db
+      - create_usage_types
     restart: always
   create_usage_types:
     image: django_planetly
