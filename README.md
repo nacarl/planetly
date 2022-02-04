@@ -14,7 +14,7 @@ should not be used in a production environment, but it
 serves the purpose of this task (this is also the reason why
 a restart of the docker-compose is necessary)
 
-##run the application with docker-compose:
+#run the application with docker-compose:
 `cd planetly`
 
 `docker-compose build`
@@ -24,7 +24,7 @@ a restart of the docker-compose is necessary)
 wait until the db server is started and the other processes are done. 
 Then kill the processes with ctrl + c and rerun 
 `docker-compose up` (because the web server is not restarting correctly)
-##The API should be running on localhost:8000/
+#The API should be running on localhost:8000/
 The API contains the following endpoints:
 * /usages
 * /users
@@ -36,17 +36,17 @@ on `127.0.0.1:8000/api-token-auth/` with a tool like postman to
 get a token and use it with a browser extension like Chrome Modheader
 to add the token to your requests headers:
 `Authorization: Token <your_token>`
-##Filtering:
+#Filtering:
 A Date range filter can be applied for the usage: usage_at attribute like this:
 
 `/usages/?usage_at_start=2019-01-01&usage_at_end=2021-01-01`
 
-##Sorting:
+#Sorting:
 Sorting is possible for following attribute:
 * usage types: 'name', 'unit', 'factor'
 * usages: 'usage_type'
 
 e.g.: `/usages/?ordering=-usage_type`
 
-##Pagination
+#Pagination
 Pagination is enabled and set to a page size of 5 for demonstration purposes.
